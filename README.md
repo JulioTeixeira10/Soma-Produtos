@@ -1,0 +1,1 @@
+Script que pega o nome e a quantidade de um produto de um arquivo/tabela e olha se esse produto se encontra no outro arquivo, se encontrado o script soma a quantidade dos produtos em comum e no final cria um arquivo com todos os produtos que coincidem entre os arquivos e a soma total das quantidades.
