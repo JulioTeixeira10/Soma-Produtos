@@ -37,10 +37,23 @@ for produto in produtos1:
         file.write(strquantidade)
         file.write("\n\n")
     else:
-        file2 = open("C:\\Users\\Usefr\\Desktop\\somapgit\\Soma-Produtos\\Produtos_Únicos.txt", "a")
+        file2 = open("C:\\Users\\Usefr\\Desktop\\somapgit\\Soma-Produtos\\Produtos_Únicos1.txt", "a")
         file2.write(produto)
         file2.write(" ------- Quantidade: ")
         file2.write(str(produtos1[produto]))
         file2.write("\n\n")
+
+
+for produto in produtos2:
+    if produto in produtos1:
+        pass
+    else:
+        file3 = open("C:\\Users\\Usefr\\Desktop\\somapgit\\Soma-Produtos\\Produtos_Únicos2.txt", "a")
+        file3.write(produto)
+        file3.write(" ------- Quantidade: ")
+        file3.write(str(produtos2[produto]))
+        file3.write("\n\n")
+
 file.close()
 file2.close()
+file3.close()
