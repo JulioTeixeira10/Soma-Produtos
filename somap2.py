@@ -1,5 +1,6 @@
 #Cria um dicionário com os produtos e suas devidas quantidades da primeira lista
 with open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Listas\\t1.txt") as t1:
+    file2 = open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Produtos Únicos\\Produtos_Únicos1.txt", "w+")
     produtos1 = {}
     n = 0
     for row in t1:
@@ -14,6 +15,7 @@ with open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Listas\\t1.txt") as t1:
 
 #Cria um dicionário com os produtos e suas devidas quantidades da segunda lista
 with open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Listas\\t2.txt") as t2:
+    file3 = open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Produtos Únicos\\Produtos_Únicos2.txt", "w+")
     produtos2 = {}
     n2 = 0
     for row in t2:
@@ -45,8 +47,10 @@ with open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Listas\\t3.txt") as t3:
             else:
                 produtos3[nomeproduto] = quantidade
             n += 1
+    file3 = open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Produtos Únicos\\Produtos_Únicos3.txt", "w+")
 
 #Cria um arquivo que soma os produtos em comúm entre os arquivos t1 - t2 e t1 - t3
+file = open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Pedido.txt", "w+")
 for produto in produtos1:
     if (produto in produtos2) and (produto in produtos3):
         resquantidade = produtos1[produto] + produtos2[produto] + produtos3[produto]
