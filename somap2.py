@@ -1,5 +1,5 @@
 #Cria um dicionário com os produtos e suas devidas quantidades da primeira lista
-with open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\t1.txt") as t1:
+with open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Listas\\t1.txt") as t1:
     produtos1 = {}
     n = 0
     for row in t1:
@@ -13,7 +13,7 @@ with open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\t1.txt") as t1:
             n += 1
 
 #Cria um dicionário com os produtos e suas devidas quantidades da segunda lista
-with open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\t2.txt") as t2:
+with open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Listas\\t2.txt") as t2:
     produtos2 = {}
     n2 = 0
     for row in t2:
@@ -30,7 +30,7 @@ with open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\t2.txt") as t2:
             n2 += 1
 
 #Cria um dicionário com os produtos e suas devidas quantidades da teceira lista
-with open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\t3.txt") as t3:
+with open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Listas\\t3.txt") as t3:
     produtos3 = {}
     n = 0
     for row in t3:
@@ -74,7 +74,7 @@ for produto in produtos1:
         file.write("\n\n")
     #Cria um arquivo com os produtos únicos do arquivo t1
     else:
-        file2 = open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Produtos_Únicos1.txt", "a")
+        file2 = open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Produtos Únicos\\Produtos_Únicos1.txt", "a")
         file2.write(produto)
         file2.write(" ------- Quantidade: ")
         file2.write(str(produtos1[produto]))
@@ -101,7 +101,7 @@ for produto in produtos2:
     elif produto in produtos3:
         pass
     else:
-        file3 = open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Produtos_Únicos2.txt", "a")
+        file3 = open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Produtos Únicos\\Produtos_Únicos2.txt", "a")
         file3.write(produto)
         file3.write(" ------- Quantidade: ")
         file3.write(str(produtos2[produto]))
@@ -114,7 +114,7 @@ for produto in produtos3:
     elif produto in produtos2:
         pass
     else:
-        file3 = open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Produtos_Únicos3.txt", "a")
+        file3 = open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Produtos Únicos\\Produtos_Únicos3.txt", "a")
         file3.write(produto)
         file3.write(" ------- Quantidade: ")
         file3.write(str(produtos3[produto]))
