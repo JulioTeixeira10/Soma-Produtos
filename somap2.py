@@ -46,9 +46,17 @@ with open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\t3.txt") as t3:
                 produtos3[nomeproduto] = quantidade
             n += 1
 
-#Cria um arquivo que soma os produtos em comúm entre o arquivo t1 e t2 e outro com os produtos únicos do arquivo t1
+#Cria um arquivo que soma os produtos em comúm entre os arquivos t1 - t2 e t1 - t3
 for produto in produtos1:
-    if produto in produtos2:
+    if (produto in produtos2) and (produto in produtos3):
+        resquantidade = produtos1[produto] + produtos2[produto] + produtos3[produto]
+        strquantidade = str(resquantidade)
+        file = open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Pedido.txt", "a")
+        file.write(produto)
+        file.write(" ------- Quantidade: ")
+        file.write(strquantidade)
+        file.write("\n\n")
+    elif produto in produtos2:
         resquantidade = produtos1[produto] + produtos2[produto]
         strquantidade = str(resquantidade)
         file = open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Pedido.txt", "a")
@@ -56,6 +64,15 @@ for produto in produtos1:
         file.write(" ------- Quantidade: ")
         file.write(strquantidade)
         file.write("\n\n")
+    elif produto in produtos3:
+        resquantidade = produtos1[produto] + produtos3[produto]
+        strquantidade = str(resquantidade)
+        file = open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Pedido.txt", "a")
+        file.write(produto)
+        file.write(" ------- Quantidade: ")
+        file.write(strquantidade)
+        file.write("\n\n")
+    #Cria um arquivo com os produtos únicos do arquivo t1
     else:
         file2 = open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Produtos_Únicos1.txt", "a")
         file2.write(produto)
@@ -63,15 +80,44 @@ for produto in produtos1:
         file2.write(str(produtos1[produto]))
         file2.write("\n\n")
 
+#Cria um arquivo que soma os produtos em comúm entre os arquivos t2 - t3
+for produto in produtos2:
+    if produto in produtos1:
+        pass
+    elif produto in produtos3:
+        resquantidade = produtos2[produto] + produtos3[produto]
+        strquantidade = str(resquantidade)
+        file = open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Pedido.txt", "a")
+        file.write(produto)
+        file.write(" ------- Quantidade: ")
+        file.write(strquantidade)
+        file.write("\n\n")
+
+
 #Cria um arquivo com os produtos únicos do arquivo t2
 for produto in produtos2:
     if produto in produtos1:
+        pass
+    elif produto in produtos3:
         pass
     else:
         file3 = open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Produtos_Únicos2.txt", "a")
         file3.write(produto)
         file3.write(" ------- Quantidade: ")
         file3.write(str(produtos2[produto]))
+        file3.write("\n\n")
+
+#Cria um arquivo com os produtos únicos do arquivo t3
+for produto in produtos3:
+    if produto in produtos1:
+        pass
+    elif produto in produtos2:
+        pass
+    else:
+        file3 = open("C:\\Users\\Usefr\\Desktop\\Soma-Produtos\\Produtos_Únicos3.txt", "a")
+        file3.write(produto)
+        file3.write(" ------- Quantidade: ")
+        file3.write(str(produtos3[produto]))
         file3.write("\n\n")
 
 file.close()
